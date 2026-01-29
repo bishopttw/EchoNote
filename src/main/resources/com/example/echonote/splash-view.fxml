@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0"
+      style="-fx-background-color: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.echonote.SplashController">
+
+      <padding>
+          <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+      </padding>
+
+      <ImageView fx:id="waveImage" fitHeight="150.0" fitWidth="150.0" preserveRatio="true">
+          <image>
+              <Image url="@images/wave-sound.png"/>
+          </image>
+      </ImageView>
+
+      <ImageView fx:id="micImage" fitHeight="120.0" fitWidth="120.0"
+                 preserveRatio="true" visible="false">
+          <image>
+              <Image url="@images/blue microphone.png"/>
+          </image>
+      </ImageView>
+
+      <Label fx:id="appNameLabel" text="EchoNote" visible="false"
+             style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: #4a90e2;"/>
+      <Label fx:id="welcomeLabel" text="Welcome to EchoNote 🎤" visible="false"
+             style="-fx-font-size: 20px; -fx-text-fill: #ffffff;"/>
+
+</VBox>
