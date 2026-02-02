@@ -5,33 +5,38 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
 
-<VBox alignment="CENTER" spacing="20.0"
-      style="-fx-background-color: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);"
-      xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.echonote.SplashController">
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.echonote.SplashController"
+           prefHeight="600.0" prefWidth="800.0"
+           style="-fx-background-color: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);">
 
-      <padding>
-          <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
-      </padding>
+    <!-- Wave Section - Shows First -->
+    <VBox fx:id="waveSection" alignment="CENTER" spacing="20.0">
+        <ImageView fx:id="waveImage" fitHeight="180.0" fitWidth="280.0"
+                   preserveRatio="true"
+                   style="-fx-effect: dropshadow(gaussian, #4a90e2, 10, 0.5, 0, 0);">
+            <image>
+                <Image url="@images/wave-sound.png"/>
+            </image>
+        </ImageView>
+    </VBox>
 
-      <ImageView fx:id="waveImage" fitHeight="150.0" fitWidth="150.0" preserveRatio="true">
-          <image>
-              <Image url="@images/wave-sound.png"/>
-          </image>
-      </ImageView>
+    <!-- Welcome Section - Hidden at Start -->
+    <VBox fx:id="welcomeSection" alignment="CENTER" spacing="20.0" visible="false">
+        <ImageView fx:id="micImage" fitHeight="120.0" fitWidth="120.0" preserveRatio="true">
+            <image>
+                <Image url="@images/blue microphone.png"/>
+            </image>
+        </ImageView>
 
-      <ImageView fx:id="micImage" fitHeight="120.0" fitWidth="120.0"
-                 preserveRatio="true" visible="false">
-          <image>
-              <Image url="@images/blue microphone.png"/>
-          </image>
-      </ImageView>
+        <Label fx:id="welcomeLabel" text="Welcome to"
+               style="-fx-font-size: 24px; -fx-text-fill: #ffffff;"/>
 
-      <Label fx:id="appNameLabel" text="EchoNote" visible="false"
-             style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: #4a90e2;"/>
-      <Label fx:id="welcomeLabel" text="Welcome to EchoNote 🎤" visible="false"
-             style="-fx-font-size: 20px; -fx-text-fill: #ffffff;"/>
+        <Label fx:id="appNameLabel" text="EchoNote"
+               style="-fx-font-size: 56px; -fx-font-weight: bold; -fx-text-fill: #4a90e2;"/>
+    </VBox>
 
-</VBox>
+</StackPane>

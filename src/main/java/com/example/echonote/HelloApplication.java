@@ -12,8 +12,8 @@ import java.util.Objects;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader Loader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(Loader.load(), 900, 600);
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("splash-view.fxml"));
+        Scene scene = new Scene(loader.load(), 800, 600);
         stage.setTitle("EchoNote");
         stage.getIcons().add(new Image(
                 Objects.requireNonNull(
@@ -23,8 +23,6 @@ public class HelloApplication extends Application {
         );
 
         stage.setScene(scene);
-        stage.setMinWidth(800);
-        stage.setMinHeight(500);
         stage.centerOnScreen();
         stage.show();
     }
