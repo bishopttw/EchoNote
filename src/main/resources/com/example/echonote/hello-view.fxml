@@ -16,6 +16,4 @@
 
     <Label fx:id="listen"/>
     <Button text="RECORD" onAction="#onRecordButton"/>
-
-    <Button text="STOP" onAction="#onStopButton"/>
 </VBox>
