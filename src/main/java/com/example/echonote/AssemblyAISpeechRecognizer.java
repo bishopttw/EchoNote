@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 public class AssemblyAISpeechRecognizer {
 
-    private static final String API_KEY = "f011014fe19e4ccf874a9ffbfdc65805";
+    private static final String API_KEY = "YOUR_API_KEY_HERE";
     private static final String UPLOAD_URL = "https://api.assemblyai.com/v2/upload";
     private static final String TRANSCRIPT_URL = "https://api.assemblyai.com/v2/transcript";
 

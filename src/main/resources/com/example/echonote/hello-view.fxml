@@ -2,18 +2,79 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.echonote.HelloController">
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+
+<VBox alignment="CENTER" spacing="20.0"
+      style="-fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e, #0f3460);"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.echonote.HelloController"
+      prefHeight="600.0" prefWidth="800.0">
+
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="30.0" left="40.0" right="40.0" top="30.0"/>
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <!-- APP TITLE -->
+    <Label text="EchoNote Voice Assistant"
+           style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #4a90e2;"/>
 
-    <Label fx:id="listen"/>
-    <Button text="RECORD" onAction="#onRecordButton"/>
+    <Region VBox.vgrow="SOMETIMES" minHeight="20"/>
+
+    <!-- MICROPHONE ICON -->
+    <FontIcon fx:id="micIcon" iconLiteral="fas-microphone" iconSize="80"
+    iconColor="#4a90e2" styleClass="mic-icon"/>
+
+    <!-- STATUS LABEL -->
+    <Label fx:id="listen" text="Ready to listen!"
+            style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+    <!-- RECORD BUTTON -->
+    <Button fx:id="recordButton" text="RECORD" onAction="#onRecordButton"
+            prefWidth="200" prefHeight="60"
+            style="-fx-background-color: #4a90e2; -fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold; -fx-background-radius: 30; -fx-cursor: hand;"
+            styleClass="record-button"/>
+
+    <Region VBox.vgrow="SOMETIMES" minHeight="30"/>
+
+    <!-- Commands List -->
+    <Label text="Available Commands:"
+           style="-fx-font-size: 18px; -fx-text-fill: #4a90e2; -fx-font-weight: bold;"/>
+
+    <ScrollPane prefHeight="200" prefWidth="700"
+                style="-fx-background: transparent; -fx-background-color: transparent;"
+                fitToWidth="true">
+        <VBox spacing="8"
+              style="-fx-background-color: rgba(255, 255, 255, 0.1); -fx-background-radius: 15; -fx-padding: 20;">
+
+            <Label text="• 'Hello' - Get a greeting"
+                   style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label text="• 'Open Notepad' - Opens Notepad"
+                   style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label text="• 'Open Calculator' - Opens Calculator"
+                   style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label text="• 'Open Browser' - Opens Chrome"
+                   style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label text="• 'Open File Explorer' - Opens File Explorer"
+                   style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label text="• 'Create Folder' - Creates folder on Desktop"
+                   style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label text="• 'What time is it' - Shows current time"
+                   style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label text="• 'What's the date' - Shows current date"
+                   style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label text="• 'Shutdown' - Initiates shutdown (60s delay)"
+                   style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label text="• 'Cancel' - Cancels shutdown"
+                   style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Label text="• 'Close App' - Exits the application"
+                   style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+        </VBox>
+    </ScrollPane>
 </VBox>

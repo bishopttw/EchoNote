@@ -1,0 +1,51 @@
+                <!DOCTYPE html>
+                  <html>
+                  <head>
+                      <meta charset="UTF-8">
+                      <title>EchoNote Speech</title>
+                      <style>
+                          body {
+                              font-family: Arial;
+                              text-align: center;
+                              padding: 50px;
+                              background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+                              color: white;
+                          }
+                          button {
+                              padding: 20px 40px;
+                              font-size: 20px;
+                              background: #4a90e2;
+                              color: white;
+                              border: none;
+                              border-radius: 10px;
+                              cursor: pointer;
+                          }
+                          #result { margin-top: 30px; font-size: 24px; }
+                      </style>
+                  </head>
+                  <body>
+                      <h1>🎤 EchoNote Speech Recognition</h1>
+                      <button onclick="startSpeech()">Click to Speak</button>
+                      <div id="result"></div>
+
+                      <script>
+                         const recognition = new webkitSpeechRecognition();
+                         recognition.lang = 'en-US';
+
+                         recognition.onresult = (event) => {
+                            const text = event.results[0][0].transcript;
+                            document.getElementById('result').innerText = 'You said: ' + text;
+
+//                            SEND TO JAVA APP
+                              fetch('http://localhost:8765',{
+                                  method: 'POST',
+                                  body: text
+                              });
+                         };
+
+                         function startSpeech(){
+                             recognition.start();
+                         }
+                       </script>
+                   </body>
+                   </html>

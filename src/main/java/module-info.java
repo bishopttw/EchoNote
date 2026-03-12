@@ -6,6 +6,7 @@ module com.example.echonote {
 
     requires org.controlsfx.controls;
     requires org.kordamp.ikonli.javafx;
+    requires org.kordamp.ikonli.fontawesome5;
     requires org.kordamp.bootstrapfx.core;
     requires java.desktop;
 

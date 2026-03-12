@@ -100,11 +100,12 @@ public class SplashController {
             splashStage.close();
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
-            Scene mainScene = new Scene(loader.load(), 600, 400);
+            Scene mainScene = new Scene(loader.load(), 800, 600);
 
             Stage mainStage = new Stage();
-            mainStage.setTitle("EchoNote");
+            mainStage.setTitle("EchoNote - Voice Command App");
             mainStage.setScene(mainScene);
+            mainStage.centerOnScreen();
             mainStage.show();
         } catch (IOException e) {
             System.out.println("Error opening main app: "+ e.getMessage());
